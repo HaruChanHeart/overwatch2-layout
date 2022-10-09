@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="materialize.min.css">
+    <script src="materialize.min.js"></script>
+	<custom-style>
+		<style is="custom-style">
+			body {
+				color: #000;
+				background-color: #fff;
+			}
+            .pt-1 {
+                padding-top: .75rem !important;
+            }
+            .dropdown-content li > a, .dropdown-content li > span {
+                color: #000;
+            }
+            select:focus {
+                outline: 1px solid #ef5350;
+            }
+            input[type=number]:not(.browser-default):focus:not([readonly]) {
+                border-color: #ef5350;
+            }
+            input[type=number]:not(.browser-default):focus:not([readonly]) {
+                -webkit-box-shadow: 0 1px 0 0 #ef5350;
+                box-shadow: 0 1px 0 0 #ef5350;
+            }
+            input[type=number]:not(.browser-default):focus:not([readonly])+label {
+                color: #ef5350;
+            }
+            h5 {
+                margin: .5rem 0 1rem !important;
+            }
+		</style>
+	</custom-style>
+</head>
+<body>
+    <div class="row">
+        <div class="col s12 pt-1">경쟁전 점수를 방송 화면에 표시합니다</div>
+        <h5 class="col s12">경쟁전 점수 설정</h5>
+        <div class="col s6">
+            <label>경쟁전 티어</label>
+            <select class="browser-default" id="tier">
+                <option value="bronze">BRONZE</option>
+                <option value="silver">SILVER</option>
+                <option value="gold">GOLD</option>
+                <option value="platinum">PLATINUM</option>
+                <option value="diamond">DIAMOND</option>
+                <option value="master">MASTER</option>
+                <option value="grandmaster">GRANDMASTER</option>
+                <option value="topranker">TOP 500</option>
+            </select>
+        </div>
+        <div class="col s6">
+            <label>경쟁전 등급</label>
+            <select class="browser-default" id="level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <h5 class="col s12">전적 입력</h5>
+        <div class="input-field col s6">
+            <input id="victoryText" type="number" maxlength="3" placeholder="0">
+            <label for="victoryText">승리 수</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="defeatText" type="number" maxlength="3" placeholder="0">
+            <label for="defeatText">패배/무승부 수</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+	        <button id="srSubmit" class="waves-effect waves-light btn-large red lighten-1">적용</button>
+        </div>
+    </div>
+    <script>
+        
+		let tier = document.getElementById('tier');
+		let level = document.getElementById('level');
+        
+		let victory = document.getElementById('victoryText');
+		let defeat = document.getElementById('defeatText');
+        
+		const srsubmit = document.getElementById('srSubmit');
+        
+        // nodecg replicant
+		const tierNameReplicant = nodecg.Replicant('tierName');
+		const tierLevelReplicant = nodecg.Replicant('tierLevel');
+        
+		const victoryReplicant = nodecg.Replicant('victory');
+		const defeatReplicant = nodecg.Replicant('defeat');
+
+		tierNameReplicant.on('change', newVal => {
+			tier.value = newVal;
+		});
+
+		tierLevelReplicant.on('change', newVal => {
+			level.value = newVal;
+		});
+
+		victoryReplicant.on('change', newVal => {
+			victory.value = newVal;
+		});
+
+		defeatReplicant.on('change', newVal => {
+			defeat.value = newVal;
+		});
+
+		srsubmit.addEventListener('click', () => {
+            tierNameReplicant.value = tier.value;
+            tierLevelReplicant.value = level.value;
+            
+            victoryReplicant.value = victory.value;
+            defeatReplicant.value = defeat.value;
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            let elems = document.querySelectorAll('select');
+            let instances = M.FormSelect.init(elems);
+        });
+	</script>
+
+	<script>
+		// You can access the NodeCG api anytime from the `window.nodecg` object
+		// Or just `nodecg` for short. Like this!:
+		// nodecg.log.info('Here\'s an example of using NodeCG\'s logging API!');
+	</script>
+</body>
+</html>

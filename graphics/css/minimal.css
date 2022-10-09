@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 900;
+    src: url('Outfit-Black.woff2') format('woff2');
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 900 32pt "Outfit", sans-serif;
+    color: #fff;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    background: rgba(21,27,44,.85);
+    border-radius: .25rem;
+    width: 100vw;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info {
+    width: 100%;
+    margin-right: .25rem;
+}
+
+.stat {
+    flex: 0 0 auto;
+}
+
+.stat span {
+    color: #151b2c;
+    display: inline-block;
+    border-radius: .25rem;
+    padding: .15rem .25rem;
+}
+
+#victory {
+    background: #8ce99a;
+    margin-right: .25rem;
+}
+
+#defeat {
+    background: #ff8787;
+}
+
+.disable {
+    display: none;
+}

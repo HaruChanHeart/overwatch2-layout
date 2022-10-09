@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 900;
+    src: url('Outfit-Black.woff2') format('woff2');
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 900 10vw "Outfit", sans-serif;
+    color: #fff;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    background: rgba(21,27,44,.85);
+    overflow: hidden;
+    border-radius: .25rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: .5rem;
+    padding-left: 0;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(.75);
+    padding: .25rem;
+    border-radius: .25rem;
+    background-color: rgba(0,0,0,.5);
+}
+
+#tier {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url('../img/ow2tier.png');
+    width: 245px;
+    height: 234px;
+}
+
+.info {
+    font-size: 5vw;
+    margin-bottom: .25rem;
+}
+
+.stat span {
+    color: #151b2c;
+    display: inline-block;
+    border-radius: .25rem;
+    padding: .15rem .25rem;
+}
+
+#victory {
+    background: #8ce99a;
+    margin-right: .25rem;
+}
+
+#defeat {
+    background: #ff8787;
+}
+
+.bronze {
+    background-position: 0 0;
+}
+
+.silver {
+    background-position: -245px 0;
+}
+
+.gold {
+    background-position: -490px 0;
+}
+
+.platinum {
+    background-position: -735px 0;
+}
+
+.diamond {
+    background-position: 0 -234px;
+    animation: diamond 2s ease-in-out infinite alternate;
+}
+
+.master {
+    background-position: -245px -234px;
+    animation: master 2s ease-in-out infinite alternate;
+}
+
+.grandmaster {
+    background-position: -490px -234px;
+    animation: grandmaster 2s ease-in-out infinite alternate;
+}
+
+.topranker {
+    background-position: -735px -234px;
+    animation: topranker 2s ease-in-out infinite alternate;
+}
+
+.disable {
+    display: none;
+}
+
+@keyframes diamond {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.85));
+    }
+}
+
+@keyframes master {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(255,236,153,.5))
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(255,236,153,.85))
+    }
+}
+
+@keyframes grandmaster {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.85));
+    }
+}
+
+@keyframes topranker {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(186,200,255,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(186,200,255,.85));
+    }
+}
