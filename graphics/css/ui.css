@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 900;
+    src: url('Outfit-Black.woff2') format('woff2');
+}
+
+html, body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font: 900 10vw "Outfit", sans-serif;
+    color: #fff;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+.icon {
+    position: absolute;
+    left: -15px;
+    bottom: -50px;
+    transform: scale(.25);
+}
+
+#tier {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url('../img/ow2tier.png');
+    width: 245px;
+    height: 234px;
+}
+
+.info {
+    position: absolute;
+    left: 168px;
+    bottom: 58px;
+    width: 222px;
+    background: linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.25));
+    border-radius: 3px;
+    padding: 2px 12px;
+    font-size: 14pt;
+    transform: skewY(-3.8deg);
+    text-shadow: 0 0 2px #000;
+}
+
+.bronze {
+    background-position: 0 0;
+}
+
+.silver {
+    background-position: -245px 0;
+}
+
+.gold {
+    background-position: -490px 0;
+}
+
+.platinum {
+    background-position: -735px 0;
+}
+
+.diamond {
+    background-position: 0 -234px;
+    animation: diamond 2s ease-in-out infinite alternate;
+}
+
+.master {
+    background-position: -245px -234px;
+    animation: master 2s ease-in-out infinite alternate;
+}
+
+.grandmaster {
+    background-position: -490px -234px;
+    animation: grandmaster 2s ease-in-out infinite alternate;
+}
+
+.topranker {
+    background-position: -735px -234px;
+    animation: topranker 2s ease-in-out infinite alternate;
+}
+
+.disable {
+    display: none;
+}
+
+@keyframes diamond {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.85));
+    }
+}
+
+@keyframes master {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(255,236,153,.5))
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(255,236,153,.85))
+    }
+}
+
+@keyframes grandmaster {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(197,246,250,.85));
+    }
+}
+
+@keyframes topranker {
+    0% {
+    	filter: drop-shadow(0 0 .5rem rgba(186,200,255,.5));
+    }
+    100% {
+    	filter: drop-shadow(0 0 .5rem rgba(186,200,255,.85));
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "overwatch2-layout",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Overwatch 2 skillrate overlay for NodeCG",
   "homepage": "https://haruchanheart.com",
   "author": {
@@ -40,6 +40,12 @@
       },
       {
         "file": "overwatch2_minimal.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "overwatch2_ui.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false
