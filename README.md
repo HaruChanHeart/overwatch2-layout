@@ -29,7 +29,7 @@ NodeCG 접속 후 Graphics 메뉴에서 링크를 복사합니다. 그리고 OBS
 Graphics 메뉴로 가면 `overwatch2.html`, `overwatch2_minimal.html`와 `overwatch2_ui.html` 파일을 볼 수 있습니다.
 * `overwatch2.html`은 경쟁전 랭크 아이콘과 랭크 이름, 전적이 표시됩니다.
 * `overwatch2_minimal.html`은 랭크 아이콘이 보이지 않는 대신 랭크 이름과 전적이 표시됩니다.
-* `overwatch2_ui.html`은 오버워치 2의 UI와 비슷하게 제작되어 랭크 아이콘과 랭크 이름이 표시됩니다.
+* `overwatch2_ui.html`은 오버워치 2의 UI와 비슷하게 제작되어 랭크 아이콘과 랭크 이름이 표시됩니다. 권장 해상도는 `1920x1080`입니다.
 
 이제 Workspace 메뉴로 들어가면 오버워치 점수 패널이란 창을 볼 수 있고 여기서 각각 내용에 맞게 수정해 주시면 됩니다.
 
